@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 #主分支测试注释
 import argparse
+=======
+>>>>>>> feature/clean
 import csv
 import re
 from pathlib import Path
@@ -7,6 +10,7 @@ from datetime import datetime
 
 
 def clean_text(text):
+<<<<<<< HEAD
     """清洗文本：去除首尾空格、去除HTML标签，并做基础敏感信息遮罩。"""
     if text is None:
         return ""
@@ -15,6 +19,14 @@ def clean_text(text):
     text = re.sub(r'<[^>]+>', '', text)  # 去HTML标签
     text = re.sub(r'\s+', ' ', text)     # 压缩连续空白
     text = re.sub(r'\b(?:\d{11})\b', '***********', text)  # 遮罩手机号
+=======
+    """清洗文本：去除首尾空格、去除HTML标签"""
+    if text is None:
+        return ""
+    text = str(text).strip()
+    # 去除HTML标签
+    text = re.sub(r'<[^>]+>', '', text)
+>>>>>>> feature/clean
     return text
 
 
@@ -42,6 +54,7 @@ def parse_time(time_str):
     return time_str
 
 
+<<<<<<< HEAD
 def parse_args():
     parser = argparse.ArgumentParser(description="清洗基础聊天会话 CSV")
     parser.add_argument("--input", default="camp-data/raw/d3/chat_sessions_dirty.csv", help="输入 CSV 路径")
@@ -53,11 +66,17 @@ def main():
     args = parse_args()
     input_file = Path(args.input)
     output_file = Path(args.output)
+=======
+def main():
+    input_file = Path("camp-data/raw/d3/chat_sessions_dirty.csv")
+    output_file = Path("chat_sessions_cleaned.csv")
+>>>>>>> feature/clean
 
     seen = set()          # 用于去重
     cleaned_rows = []     # 清洗后的行
     removed_count = 0     # 移除的行数
 
+<<<<<<< HEAD
     if not input_file.exists():
         raise FileNotFoundError(f"输入文件不存在: {input_file}")
 
@@ -65,6 +84,10 @@ def main():
         reader = csv.DictReader(f)
         if not reader.fieldnames:
             raise ValueError("输入 CSV 为空或缺少表头")
+=======
+    with open(input_file, "r", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+>>>>>>> feature/clean
         fieldnames = reader.fieldnames
 
         for row in reader:
@@ -84,7 +107,11 @@ def main():
             row["created_at"] = parse_time(row.get("created_at", ""))
 
             # 6. 过滤：message 为空 或 user_id 为空
+<<<<<<< HEAD
             if not row.get("message", "") or not row.get("user_id", ""):
+=======
+            if not row["message"] or not row["user_id"]:
+>>>>>>> feature/clean
                 removed_count += 1
                 continue
 
@@ -98,7 +125,10 @@ def main():
             cleaned_rows.append(row)
 
     # 写入清洗后的文件
+<<<<<<< HEAD
     output_file.parent.mkdir(parents=True, exist_ok=True)
+=======
+>>>>>>> feature/clean
     with open(output_file, "w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
