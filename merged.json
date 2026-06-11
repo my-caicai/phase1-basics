@@ -1,8 +1,0 @@
-{"trace_id": "T-1001", "tool": "file_export", "status": "success", "output": "OK: exported to /home/user/报告_final.pdf\n\n<!-- cached -->", "latency_ms": "312"}
-{"trace_id": "T-1002", "tool": "file_export", "status": "fail", "output": "ERROR: path not found: /tmp/???.docx   呃呃呃", "latency_ms": 890}
-{"trace_id": "T-1003", "tool": "web_search", "status": "success", "output": "**麒麟** 驱动安装：1) 打开设制中心 2) 嗯…点更新 3) reboot!!!", "latency_ms": 1200}
-{"uid": "U001", "time": "2026/6/2 09:15", "action": "chat", "content": "  嗯嗯…那个…帮我把　文档　导出成 PDF 吧！！  "}
-{"uid": "U001", "time": "2026-06-02T09:16:00", "action": "chat", "content": "啊不是 word 是 wps 啦 @@@"}
-{"uid": "U002", "time": "2026年6月2日 10:00", "action": "click", "content": "设置->隐私->***清除缓存***"}
-{"uid": "U003", "time": "", "action": "chat", "content": "呃…就是…能不能别每次弹窗啊😅"}
-{"user_id": "U004", "timestamp": "2026-06-02 14:30:00", "type": "voice", "text": "然后然后然后帮我查一下那个麒麟系统怎么装驱动"}
