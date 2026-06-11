@@ -1,6 +1,20 @@
-#排除临时文件和敏感数据
+# 敏感文件
 *.log
-*.pyc
+*.env
+.env.*
+config.ini
+secrets.json
+credentials.*
+
+# 输出文件
+merged.json
+chat_sessions_cleaned.csv
+
+# Python
 __pycache__/
-camp-data/raw/
-.env
+*.pyc
+*.pyo
+
+# IDE
+.vscode/
+.idea/
