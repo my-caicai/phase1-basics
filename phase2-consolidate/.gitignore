@@ -1,0 +1,16 @@
+# Python相关
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env/
+venv/
+# 临时文件/日志
+*.log
+*.tmp
+clean.log
+# 输出文件（可选，根据需要调整）
+output/
+# 编辑器配置
+.vscode/
+.idea/
